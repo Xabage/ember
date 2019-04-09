@@ -1,0 +1,27 @@
+<h2>Add a new local Library</h2>
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Nombre</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.name class="form-control" placeholder="El nombre de la Biblioteca"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Dirección</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.address class="form-control" placeholder="La dirección de la Biblioteca"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Teléfono</label>
+    <div class="col-sm-10">
+      {{input type="text" value=model.phone class="form-control" placeholder="El teléfono de la Biblioteca"}}
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary" {{action 'saveLibrary' model}}>Añadir a la lista de Bibliotecas</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<h1>Estadísticas, nuestro Centro de Datos  <span class="icon-chart"></span></h1>
+
+<div class="row">
+  <div class="col-md-4">{{number-box title="Bibliotecas" number=libraries.length}}</div>
+  <div class="col-md-4">{{number-box title="Autores" number=authors.length}}</div>
+  <div class="col-md-4">{{number-box title="Libros" number=books.length}}</div>
+</div>
+
+{{seeder-block
+ sectionTitle='Bibliotecas'
+ generateAction='generateLibraries'
+ deleteAction='deleteLibraries'
+ generateReady=libDone
+ deleteReady=libDelDone
+ generateInProgress=generateLibrariesInProgress
+ deleteInProgress=deleteLibrariesInProgress}}
+
+{{seeder-block
+ sectionTitle='Autores con Libros'
+ generateAction='generateBooksAndAuthors'
+ deleteAction='deleteBooksAndAuthors'
+ generateReady=authDone
+ deleteReady=authDelDone
+ generateInProgress=generateBooksInProgress
+ deleteInProgress=deleteBooksInProgress}}
