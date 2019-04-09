@@ -3,7 +3,7 @@
 Fuente: https://www.youtube.com/watch?v=vYakop2d2RI
 
 
-<img src="" width="20%">
+<img src="https://github.com/Xabage/ember/blob/master/liga-ember/app/imagenes/pantalla-tabla.png" width="20%">
 
 ## Funciones
 
