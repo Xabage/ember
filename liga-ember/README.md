@@ -10,6 +10,8 @@ Fuente: https://www.youtube.com/watch?v=vYakop2d2RI
 Simulador de liga de fútbol: simula partidos entre los 20 equipos de la liga. Los equipos locales tiene más probabilidades de ganar que los visitantes.
 La tabla se actualiza según los puntos y por diferencia de goles.
 
+##Running
+*  http://localhost:4200
 
 ## Tecnología
 

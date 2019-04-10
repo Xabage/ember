@@ -26,7 +26,7 @@
         <td class="font-bold text-center">{{team.points}}</td>
         <td>
             <div class="flex text-white text-sm text-center">
-            {{#each (take 5 (sort-by "playedOn:asc" team.games)) as |game|}}
+            {{#each (take 5 (sort-by "playedOn:assc" team.games)) as |game|}}
                 {{#if game.isDraw}}
                     <span class="p-1 mr-1 bg-grey w-8">E</span>
                 {{else if (eq game.winningTeam.id team.id)}}
