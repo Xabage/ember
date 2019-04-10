@@ -4,7 +4,7 @@ import {later} from '@ember/runloop';
 import {shuffle} from 'ember-composable-helpers/helpers/shuffle';
 import {computed} from '@ember/object';
 
-let DELAY_BETWEEN_GAMES = 1500;
+let DELAY_BETWEEN_GAMES = 1000;
 
 export default Service.extend({
 
@@ -17,6 +17,7 @@ export default Service.extend({
     games: computed(function(){
         return this.store.peekAll('game');
     }),
+
 
     init(){
         this._super(...arguments);
@@ -75,11 +76,12 @@ export default Service.extend({
             homeGoals,
             awayGoals,
             playedDate: new  Date()
-        });
+        }), this.store.peekAll("game").length<380&&Ember.run.later(this, this.simulateGame, 500);
 
-        later(this, this.simulateGame, DELAY_BETWEEN_GAMES); 
-
+        //later(this, this.simulateGame, DELAY_BETWEEN_GAMES);
     },
+
+    
 
     randomScore(maximumGoasl){
         return Math.round((Math.random() * maximumGoasl));
