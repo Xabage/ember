@@ -9,6 +9,7 @@ Fuente: https://www.youtube.com/watch?v=vYakop2d2RI
 
 Simulador de liga de fútbol: simula partidos entre los 20 equipos de la liga. Los equipos locales tiene más probabilidades de ganar que los visitantes.
 La tabla se actualiza según los puntos y por diferencia de goles.
+La liga se termina al llegar a los 380 partidos.
 
 ## Demo:
 * http://liga-ember.surge.sh/
