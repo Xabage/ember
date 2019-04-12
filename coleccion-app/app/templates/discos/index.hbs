@@ -1,0 +1,12 @@
+<h2>Lista</h2>
+
+<div class="row">
+  {{#each model as |disco|}}
+    <div class="col-md-4">
+      {{#disco-item item=disco}}
+        {{#link-to 'discos.edit' disco.id class='btn btn-success btn-xs'}}Editar{{/link-to}}
+        <button class="btn btn-danger btn-xs" {{action 'deleteDisco' disco}}>Borrar</button>
+      {{/disco-item}}
+    </div>
+  {{/each}}
+</div>

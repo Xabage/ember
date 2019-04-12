@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Título</label>
+            <div class="col-sm-8">
+            {{input type="text" value=item.titulo class="form-control" placeholder="Título del disco, vinilo, dvd, ..."}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Grupo</label>
+            <div class="col-sm-8">
+            {{input type="text" value=item.grupo class="form-control" placeholder="Nombre del grupo"}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Portada*</label>
+            <div class="col-sm-8">
+            {{input type="text" value=item.portada class="form-control" placeholder="Url de la portada"}}
+            </div>
+    
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Año</label>
+            <div class="col-sm-8">
+            {{input type="text" value=item.publicacion class="form-control" placeholder="Fecha de edición"}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Formato</label>
+            <div class="col-sm-8">
+            {{input type="text" value=item.formato class="form-control" placeholder="CD, vinilo, dvd, ..."}}
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+            <button type="submit" class="btn btn-default" {{action 'buttonClicked' item}} disabled={{unless item.isValid true}}>{{buttonLabel}}</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <img src={{this.item.portada}} alt={{this.item.titulo}} width="300" height="300">
+    </div>		
+</div>
