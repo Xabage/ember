@@ -1,0 +1,18 @@
+<h1>Página de Contacto</h1>
+
+<div class="container">
+<form >
+  <div class="form-group">
+    <label for="email">Dirección de Email:</label>
+    {{input type="email" value=emailAddress class="form-control" placeholder="Por favor escriba su dirección de e-mail." autofocus="autofocus"}}
+  </div>
+  {{textarea class="form-control" placeholder="Su mensaje. (Al menos 5 caracteres.)" rows="7" value=message}}
+  <br><br>
+  <button class="btn btn-primary" disabled="{{unless isValid 'disabled'}}" {{action 'sendMessage'}}>Enviar Mensaje</button>
+</form>
+<br><br>
+{{#if responseMessage}}
+     <div class="alert alert-success">{{responseMessage}}</div>
+   {{/if}}
+
+</div>

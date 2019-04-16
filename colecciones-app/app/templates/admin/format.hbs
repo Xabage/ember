@@ -1,0 +1,36 @@
+<h1>Formato del Artículo</h1>
+
+<div class="container">
+<form >
+  <div class="form-group">
+    <label for="formato">Tipo:</label>
+    {{input type="text" id="formato" value=formato class="form-control" placeholder="CD,Vinilo, DVD, ..." autofocus="autofocus"}}
+  </div>
+  <br><br>
+  <button class="btn btn-primary" {{action 'formatNew'}}>Crear</button>
+</form>
+<br><br>
+{{#if responseMessage}}
+     <div class="alert alert-success">{{responseMessage}}</div>
+   {{/if}}
+
+</div>
+
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Formato</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each model as |formato|}}
+            <tr>
+            <td>{{formato.id}}</td>
+            <td>{{formato.tipo}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
