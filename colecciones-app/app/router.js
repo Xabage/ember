@@ -15,6 +15,7 @@ Router.map(function() {
 
   this.route('grupos', function() {
     this.route('new');
+    this.route('edit', { path: '/:grupo_id/edit' });
   });
 
   this.route('admin', function() {

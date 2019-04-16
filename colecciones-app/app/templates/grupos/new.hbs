@@ -4,20 +4,20 @@
 
   <div class="col-md-10">
     <div class="form-horizontal">
-    <div class="form-group has-feedback {{if grupo.isValid 'has-success'}}">
-        <label class="col-sm-2 control-label">Nombre*</label>
-        <div class="col-sm-10">
-          {{input type="text" value=grupo.nombre class="form-control" placeholder="El nombre del Grupo"}}
-          {{#if grupo.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+        <div class="form-group has-feedback {{if model.isValid 'has-success'}}">
+            <label class="col-sm-2 control-label">Nombre*</label>
+            <div class="col-sm-10">
+            {{input type="text" value=model.nombre class="form-control" placeholder="El nombre del Grupo"}}
+            {{#if model.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default" {{action 'buttonClicked' item}} disabled={{unless grupo.isValid true}}>{{buttonLabel}}</button>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+             <button type="submit" class="btn btn-default" {{action 'saveGrupo' model}} disabled={{unless model.isValid true}}>Nuevo Grupo</button>
+            </div>
         </div>
     </div>
-</div>
 
   </div> 
 

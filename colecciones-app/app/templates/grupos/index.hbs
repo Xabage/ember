@@ -2,23 +2,23 @@
 
 <div class="row">
   {{#each model as |grupo|}}
-    <div class="col-md-4">
-      <div class="panel panel-default library-item">
-    <div class="panel-heading">
+  <div class="col-md-4">
+    <div class="panel panel-default grupo-item">
+        <div class="panel-heading">
         <h3 class="panel-title">{{grupo.nombre}}</h3>
-    </div>
-    <div class="panel-body">
+        </div>
+        <div class="panel-body">
         <ul>
-            {{#each grupo.discos as |disco|}}
-            <li>{{disco.titulo}}</li>
-            {{/each}}
+            <li>disco 1</li>
+            <li>disco 2</li>
+            <li>disco 3</li>
         </ul>
+        </div>
+        <div class="panel-footer text-right">
+            {{#link-to 'grupos.edit' grupo.id class='btn btn-success btn-xs'}}Editar{{/link-to}}
+            <button class="btn btn-danger btn-xs" {{action 'deleteGrupo' grupo}}>Borrar</button>
+            </div>
     </div>
-    <div class="panel-footer text-right">
-     {{#link-to 'grupos.edit' grupo.id class='btn btn-success btn-xs'}}Editar{{/link-to}}
-        <button class="btn btn-danger btn-xs" {{action 'deleteGrupo' grupo}}>Borrar</button>
-    </div>
-</div>
-    </div>
-  {{/each}}
+  </div>
+{{/each}}
 </div>
