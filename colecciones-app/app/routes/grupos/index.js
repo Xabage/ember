@@ -3,7 +3,9 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 
   model() {
-    return this.store.findAll('grupo');
+    return this.store.findAll('grupo',{
+      discos: this.store.findAll('disco')
+    });
   },
 
   actions: {

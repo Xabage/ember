@@ -11,6 +11,7 @@ Router.map(function() {
 
   this.route('discos', function() {
     this.route('new');
+    this.route('edit', { path: '/:disco_id/edit' });
   });
 
   this.route('grupos', function() {
@@ -22,6 +23,7 @@ Router.map(function() {
     this.route('invitations');
     this.route('contacts');
     this.route('format');
+    this.route('seeder');
   });
 });
 
