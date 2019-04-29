@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "ember-power-select";
 
 body {
     padding-top: 20px;
@@ -11,3 +12,25 @@ body {
   .grupo-item {
     min-height: 150px;
   }
+
+  i[class^="far fa-frown"] {
+    font-size: 250px;
+  }
+
+  #bandas tr:hover {
+    background-color: #E1F8FC;
+  }
+  
+  #bandas th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: darkslategrey;
+    color: white;
+  }
+  
+  td.capitalize {
+    text-transform: capitalize;
+    
+  }
+@import "ember-power-select";

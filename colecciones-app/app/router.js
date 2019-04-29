@@ -24,7 +24,9 @@ Router.map(function() {
     this.route('contacts');
     this.route('format');
     this.route('seeder');
+    this.route('edit', { path: '/:invitation_id/edit' });
   });
+  this.route('error404', {path:'**', redirectTo : 'error404'});
 });
 
 export default Router;

@@ -1,7 +1,7 @@
 <h2>Lista</h2>
 
 <div class="row">
-  {{#each model as |disco|}}
+  {{#each (sort-by "grupo.nombre:asc" "publicacion:asc" model) as |disco|}}
   <div class="col-md-4">
     <div class="panel panel-default grupo-item">
         <div class="panel-heading">

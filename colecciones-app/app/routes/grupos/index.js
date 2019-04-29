@@ -10,13 +10,25 @@ export default Route.extend({
 
   actions: {
 
-    deleteGrupo(grupo) {
-      let confirmation = confirm('Estás seguro?');
-
-      if (confirmation) {
-        grupo.destroyRecord();
-      }
-    }
+      editGrupo(grupo) {
+        grupo.set('isEditing', true);
+      },
+  
+      cancelGrupoEdit(grupo) {
+        grupo.set('isEditing', false);
+        grupo.rollbackAttributes();
+      },
+  
+      saveGrupo(grupo) {
+        if (grupo.get('isNotValid')) {
+          return;
+        }
+        
+        grupo.set('isEditing', false);
+        grupo.save();
+      
   }
+
+}
 
 });

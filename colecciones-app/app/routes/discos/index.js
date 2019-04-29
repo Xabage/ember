@@ -10,7 +10,7 @@ export default Route.extend({
   actions: {
 
     deleteDisco(disco) {
-      let confirmation = confirm('Está seguro?');
+      let confirmation = confirm(`Estás seguro? Borrar disco ${disco.get('id')} -  ${disco.get('titulo')}`);
 
       if (confirmation) {
         disco.destroyRecord();

@@ -1,25 +1,39 @@
 import Route from '@ember/routing/route';
 
+
 export default Route.extend({
 
- model() {
+  model(){
     return this.store.createRecord('disco',{
-        grupos: this.store.findAll('grupo'),
-        formatos: this.store.findAll('formato')
-    });
+      grupos: this.store.findAll('grupo').then(function(grupos){
+        return grupos;
+      }),
+      formatos: this.store.findAll('formato').then(function(formatos){
+        return formatos;
+      }),
+  });
   },
 
-  actions: {
+ /* model() {
+    return hash({      
+      grupos: this.store.findAll('grupo').then(function(grupos){
+        return grupos;
+      }),
+      formatos: this.store.findAll('formato'),
+      discos: this.store.createRecord('disco')
+    });
+  },*/
 
-    saveDisco(newDisco) {
-        newDisco.save().then(() => 
-        this.transitionTo('discos'));
-    },
+  /*setupController(controller, model) {
+    const discos = model.discos;
+    const grupos = model.grupos;
+    const formatos = model.formatos;
 
-    willTransition() {
-      // rollbackAttributes() removes the record from the store
-      // if the model 'isNew'
-      this.controller.get('model').rollbackAttributes();
-    }
-  }
+    this._super(controller, discos);
+
+    controller.set('grupos', grupos);
+    controller.set('formatos', formatos);
+  }*/
+
+  
 });

@@ -1,4 +1,4 @@
-<h2>Añadir un nuevo Artículo</h2>
+<h2>Editar Artículo</h2>
 
 <div class="row">
     <div class="col-md-6">
@@ -9,19 +9,12 @@
                     {{input type="text" value=model.titulo class="form-control" placeholder="Título del disco, vinilo, dvd, ..."}}
                 </div>
             </div>
-
             
-            <div class="form-group">
-                {{#power-select placeholder=" -- Seleccione un Grupo -- " selected=selectedGrupo options=model.grupos onchange=(action "grupoSelectionChanged") as |grupo|
-                    }}
-                {{grupo.nombre}}
-                {{/power-select}}
-            </div>
-
+            
             <div class="form-group">
                 <label class="col-sm-2 control-label">Portada*</label>
                 <div class="col-sm-8">
-                    {{input type="text" value=model.portada class="form-control" placeholder="Url de la portada (.jpeg, jpg o png)"}}
+                    {{input type="text" value=model.portada class="form-control" placeholder="Url de la portada"}}
                     {{#if model.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
                 </div>
 
@@ -32,22 +25,14 @@
                     {{input type="text" value=model.publicacion class="form-control" placeholder="Fecha de edición"}}
                 </div>
             </div>
+        
 
             <div class="form-group">
-                {{#power-select placeholder=" -- Seleccione un Formato -- " selected=selectedFormato options=model.formatos onchange=(action "formatoSelectionChanged") as |formato|
-                    }}
-                {{formato.tipo}}
-                {{/power-select}}
+            <div class="col-sm-offset-2 col-sm-10">
+                
+             <button type="submit" class="btn btn-default" {{action 'saveDisco' model}} disabled={{unless model.isValid true}}>Guardar</button>
             </div>
-
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-
-                    <button type="submit" class="btn btn-default" {{action 'saveDisco' model}}
-                        disabled={{unless model.isValid true}}>Nuevo Disco</button>
-                </div>
-            </div>
+        </div>
         </div>
     </div>
 
