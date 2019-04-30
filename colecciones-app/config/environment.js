@@ -7,12 +7,12 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'auto',
     firebase: {
-      apiKey: "",
-      authDomain: "",
-      databaseURL: "",
-      projectId: "",
+      apiKey: "AIzaSyCp_uezZNSyRVG4KNJatea30cQZZlFAESQ",
+      authDomain: "app-xabage.firebaseapp.com",
+      databaseURL: "https://app-xabage.firebaseio.com",
+      projectId: "app-xabage",
       storageBucket: "",
-      messagingSenderId: ""
+      messagingSenderId: "542151933533"
     },
 
     // if using ember-cli-content-security-policy

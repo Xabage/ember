@@ -1,18 +1,33 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-
-  model() {
-    return this.store.findAll('library');
+  queryParams: {
+    limit: { refreshModel: true },
+    letter: { refreshModel: true }
   },
+
+  model(params) {
+
+    if (params.limit === 'all') {
+      return this.store.findAll('library');
+    }
+
+    return this.store.query('library', {
+      orderBy: 'name',
+      startAt: params.letter,
+      endAt: params.letter+"\uf8ff"
+    });
+  },
+
   actions: {
 
     deleteLibrary(library) {
-      let confirmation = confirm('Está seguro?');
+      let confirmation = confirm('Estas seguro?');
 
       if (confirmation) {
         library.destroyRecord();
       }
     }
   }
+
 });
