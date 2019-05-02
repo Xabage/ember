@@ -22,15 +22,15 @@ export default Component.extend({
   },
   
   saveDisco(newDisco) {
-    newDisco.set('grupo', this.get('selectedGrupo')),
-    newDisco.set('formato',this.get('selectedFormato')),
+    newDisco.set('grupo', this.get('selectedGrupo')).save(),
+    newDisco.set('formato',this.get('selectedFormato')).save(),
     newDisco.save().then(() => 
     this.get('router').transitionTo('discos'))
 },
-
+/*
     buttonClicked(param) {
       this.sendAction('action', param);
-    }
+    }*/
 
   }
 });

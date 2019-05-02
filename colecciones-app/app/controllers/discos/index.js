@@ -26,6 +26,6 @@ export default Controller.extend({
       results = results.filter((item) => item.get('titulo').match(regex));
     }
 
-    return results.sortBy('grupo.nombre', 'publicacion');
+    return results.sortBy('grupo.nombre', 'publicacion', 'formato.tipo');
   })
 });

@@ -1,16 +1,16 @@
-<h2>Lista  <i class="fas fa-compact-disc"></i></h2>
+<h2>Lista</h2>
 
 
 <div class="row">
   <table class="table table-bordered table-striped" id="bandas">
     <thead>
   <tr>
-    <th>
+    <th><i class="fas fa-music"></i> 
       Grupo
       <br><small class="small not-bold">(Click en el nombre para editar)</small>
     </th>
-    <th class="vtop">Discos</th>
-    <th class="vtop">Año</th>
+    <th class="vtop"><i class="fas fa-compact-disc"></i> Discos</th>
+    <th class="vtop"><i class="fas fa-calendar-week"></i> Año</th>
   </tr>
   </thead>
   <tbody>
@@ -18,17 +18,17 @@
     <tr>
       <td>
         {{#if grupo.isEditing}}
-          <form {{action 'saveGrupo' grupo on='submit'}} class="form-inline">
+          <form {{action "saveGrupo" grupo on="submit"}} class="form-inline">
             <div class="input-group">
               {{input value=grupo.nombre class="form-control"}}
               <div class="input-group-btn">
                 <button type="submit" class="btn btn-success" disabled={{grupo.isNotValid}}>Guardar</button>
-                <button class="btn btn-danger" {{action 'cancelGrupoEdit' grupo}}>Cancelar</button>
+                <button class="btn btn-danger" {{action "cancelGrupoEdit" grupo}}>Cancelar</button>
               </div>
             </div>
           </form>
         {{else}}
-          <b><span {{action 'editGrupo' grupo}}>{{grupo.nombre}}</span></b>
+          <b><span {{action "editGrupo" grupo}}>{{grupo.nombre}}</span></b>
         {{/if}}
       </td>
       <td>
