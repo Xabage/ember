@@ -10,6 +10,7 @@
       <br><small class="small not-bold">(Click en el nombre para editar)</small>
     </th>
     <th class="vtop">Discos</th>
+    <th class="vtop">Año</th>
   </tr>
   </thead>
   <tbody>
@@ -35,6 +36,13 @@
           {{#each (sort-by "publicacion:asc" grupo.discos) as |disco|}}
             <li>{{disco.titulo}} - <em>{{disco.formato.tipo}}</em></li>
           {{/each}}
+        </ul>
+      </td>
+      <td>
+        <ul>
+          {{#each (sort-by "publicacion:asc" grupo.discos) as |disco|}}
+            <li>{{disco.publicacion}}</li>
+          {{/each}}  
         </ul>
       </td>
     </tr>

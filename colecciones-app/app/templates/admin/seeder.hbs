@@ -4,4 +4,7 @@
   <div class="col-md-4">{{number-box title="Formatos" number=formatos.length}}</div>
   <div class="col-md-4">{{number-box title="Grupos" number=grupos.length}}</div>
   <div class="col-md-4">{{number-box title="Discos" number=discos.length}}</div>
+  {{#each  formatos as |formato|}}
+  <div class="col-md-4">{{number-box title=formato.tipo number=formato.discos.length}}</div>
+  {{/each}}
 </div>

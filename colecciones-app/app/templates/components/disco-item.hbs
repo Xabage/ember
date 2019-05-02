@@ -1,0 +1,14 @@
+<div class="panel panel-default grupo-item">
+        <div class="panel-heading">
+        <h3 class="panel-title"><b>{{item.grupo.nombre}}</b> - {{item.titulo}}</h3>
+        </div>
+        <div class="panel-body">
+            <p class="text-center"><img class="rounded mx-auto d-block float-center" src={{item.portada}} alt={{item.titulo}} width="200" height="200"></p>
+        <br>
+        <p class="text-center"><b>Formato:</b> {{item.formato.tipo}}&nbsp;&nbsp;&nbsp;&nbsp;
+            <b>Año:</b> {{item.publicacion}}</p>        
+        </div>
+        <div class="panel-footer text-right">
+            {{yield}}
+        </div>
+    </div>

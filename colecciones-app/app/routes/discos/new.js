@@ -24,16 +24,21 @@ export default Route.extend({
     });
   },*/
 
-  /*setupController(controller, model) {
-    const discos = model.discos;
-    const grupos = model.grupos;
-    const formatos = model.formatos;
+  setupController(controller, model) {
+    this._super(controller, model);
 
-    this._super(controller, discos);
+    controller.set('title', 'Añadir un nuevo Artículo');
+    controller.set('buttonLabel', 'Nuevo Disco');
+  },
 
-    controller.set('grupos', grupos);
-    controller.set('formatos', formatos);
-  }*/
+  renderTemplate() {
+    this.render('discos/form');
+  },
 
+  willTransition() {
+    // rollbackAttributes() removes the record from the store
+    // if the model 'isNew'
+    this.controller.get('model').rollbackAttributes();
+  }
   
 });
